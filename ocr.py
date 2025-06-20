@@ -10,7 +10,7 @@ def lire_texte_azure(image_path):
     key = os.getenv("AZURE_OCR_KEY")
 
     if not endpoint or not key:
-        return "❌ Clé ou endpoint Azure manquant. Vérifiez les variables d'environnement."
+        return "Clé ou endpoint Azure manquant. Vérifiez les variables d'environnement."
 
     def clean_and_resize_image(input_path, max_size=4000):
         with Image.open(input_path) as img:
@@ -49,7 +49,7 @@ def lire_texte_azure(image_path):
                 )
                 return text.strip()
             else:
-                return "❌ Échec de l'OCR Azure."
+                return "Échec de l'OCR Azure."
     except Exception as e:
         return f"Erreur Azure OCR : {e}"
 
