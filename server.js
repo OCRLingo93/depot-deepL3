@@ -131,7 +131,7 @@ app.post("/webhook", async (req, res) => {
         }
       );
 
-      console.log("✅ Message traduit envoyé à l'utilisateur");
+      console.log(" Message traduit envoyé à l'utilisateur");
       res.sendStatus(200);
     } catch (err) {
       console.error("Erreur OCR ou traduction :", err.response?.data || err.message);
