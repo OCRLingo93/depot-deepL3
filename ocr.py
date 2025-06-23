@@ -49,7 +49,7 @@ def lire_texte_azure(image_path):
                 )
                 return text.strip()
             else:
-                return " Échec de l'OCR Azure."
+                return "Échec de l'OCR Azure."
     except Exception as e:
         return f"Erreur Azure OCR : {e}"
 
@@ -59,6 +59,7 @@ if __name__ == "__main__":
     else:
         chemin = sys.argv[1]
         print(lire_texte_azure(chemin))
+
                 return "Échec de l'OCR Azure."
     except Exception as e:
         return f"Erreur Azure OCR : {e}"
