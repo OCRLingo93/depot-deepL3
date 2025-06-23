@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 from PIL import Image
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
@@ -48,6 +49,16 @@ def lire_texte_azure(image_path):
                 )
                 return text.strip()
             else:
+                return " Échec de l'OCR Azure."
+    except Exception as e:
+        return f"Erreur Azure OCR : {e}"
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Veuillez fournir le chemin de l'image.")
+    else:
+        chemin = sys.argv[1]
+        print(lire_texte_azure(chemin))
                 return "Échec de l'OCR Azure."
     except Exception as e:
         return f"Erreur Azure OCR : {e}"
