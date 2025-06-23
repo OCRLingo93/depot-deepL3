@@ -1,6 +1,5 @@
 import os
 import time
-import sys
 from PIL import Image
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
