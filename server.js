@@ -74,7 +74,6 @@ app.post("/webhook", async (req, res) => {
 
       // execution de l'OCR en lui donnant le chemin d'accès à l'image
       const { stdout, stderr } = await execPromise(`python3 ocr.py ${imagePath}`);
-});
 
       if (stderr) {
         console.error("Erreur OCR :", stderr);
