@@ -8,7 +8,7 @@ const execPromise = util.promisify(exec);//utilser les promise de maniere plus l
 const app = express();
 /*Sur Render, on peut entrer des variables d'envrionnement que l'on 
 utiise dans notre code*/
-const PORT = 3000;//Port sur lequel Render écoute les requêtes
+const PORT = process.env.PORT;//Port sur lequel Render écoute les requêtes
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN; //Token whatsApp API
 const PHONE_NUMBER_ID = "671376889387505";
 const DEEPL_API_KEY = "5781c32d-6de0-4c96-8636-423c8473729c:fx";
